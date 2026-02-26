@@ -44,7 +44,8 @@ python3 benchmarks/run_benchmarks.py \
   --concurrency-levels 1,10,50
 ```
 
-Results are written to `benchmarks/results/<run_id>/`:
+All benchmark executions are stored under `benchmarks/results/`.
+Each run is written to `benchmarks/results/<run_id>/`:
 
 - `raw.jsonl` (per-request samples)
 - `summary.csv` (aggregated metrics)
@@ -171,6 +172,74 @@ Fields in `summary.csv`:
 3. Node C: run the same configuration.
 4. Merge outputs with `merge_runs.py`.
 5. Generate per-node and global plots.
+
+## Parameterization used in the Springer Nature Computer Sciences experiment
+
+Set a fixed run tag:
+
+```bash
+export RUN_TAG="$(date -u +%Y%m%d_%H%M%S)"
+```
+
+Scenario: baseline and region `local`:
+
+```bash
+python3 benchmarks/run_benchmarks.py \
+  --results-dir "benchmarks/results/${RUN_TAG}_local_baseline" \
+  --scenarios local \
+  --function-types cpu_data \
+  --regions local \
+  --local-url http://localhost:8080/ska/datasets/soda \
+  --local-source-url "https://gitlab.com/manuparra/test-data-faas/-/raw/main/PTF10tce.fits?inline=false" \
+  --local-id "ivo://src.skao.org/datasets/fits?PTF10tce.fits" \
+  --local-duration 300 \
+  --local-interval-min 1 \
+  --local-interval-max 3
+```
+
+Scenario: concurrency and region `local`:
+
+```bash
+python3 benchmarks/run_benchmarks.py \
+  --results-dir "benchmarks/results/${RUN_TAG}_local_concurrency" \
+  --scenarios concurrency \
+  --function-types cpu_data \
+  --regions local \
+  --concurrency-levels 1,5,10,20,30,50 \
+  --concurrency-duration 60 \
+  --local-url http://localhost:8080/ska/datasets/soda \
+  --local-source-url "https://gitlab.com/manuparra/test-data-faas/-/raw/main/PTF10tce.fits?inline=false" \
+  --local-id "ivo://src.skao.org/datasets/fits?PTF10tce.fits"
+```
+
+Set token for remote regions:
+
+```bash
+export SKA_TOKEN="<SKAO IAM TOKEN>"
+```
+
+Scenario: baseline and regions `uk`, `spain`, `switzerland`:
+
+```bash
+python3 benchmarks/run_benchmarks.py \
+  --results-dir "benchmarks/results/${RUN_TAG}_remote_baseline" \
+  --scenarios baseline \
+  --baseline-duration 120 \
+  --baseline-interval-min 1 \
+  --baseline-interval-max 3 \
+  --regions uk,spain,switzerland
+```
+
+Scenario: concurrency and regions `uk`, `spain`, `switzerland`:
+
+```bash
+python3 benchmarks/run_benchmarks.py \
+  --results-dir "benchmarks/results/${RUN_TAG}_remote_concurrency" \
+  --scenarios concurrency \
+  --concurrency-levels 1,5,10,20,30,50 \
+  --concurrency-duration 60 \
+  --regions uk,spain,switzerland
+```
 
 ## Warnings
 
