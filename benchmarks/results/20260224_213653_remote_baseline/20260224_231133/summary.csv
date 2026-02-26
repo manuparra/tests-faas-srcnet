@@ -1,0 +1,7 @@
+scenario,phase,function_type,region,concurrency,idle_minutes,requests,success,errors,error_rate,rps,p50_s,p95_s,p99_s,mean_s
+baseline,,cpu_data,uk,1,0,37,37,0,0.0,0.3101,0.674086,2.333714,3.356037,1.294974
+baseline,,cpu_data,spain,1,0,44,44,0,0.0,0.3678,0.655346,0.845042,1.442406,0.698597
+baseline,,cpu_data,switzerland,1,0,43,43,0,0.0,0.3591,0.586326,1.931609,1.993423,0.820133
+baseline,,nohup,uk,1,0,54,54,0,0.0,0.4493,0.164801,0.181592,0.196118,0.166998
+baseline,,nohup,switzerland,1,0,54,54,0,0.0,0.4545,0.21611,0.231991,0.236639,0.218026
+baseline,,nohup,spain,1,0,45,45,0,0.0,0.3758,0.383993,1.578492,2.281264,0.596475

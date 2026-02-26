@@ -1,0 +1,47 @@
+{
+  "run_id": "20260224_223740",
+  "started_at_utc": "2026-02-24T21:42:41.265023+00:00",
+  "requests_total": 85,
+  "targets": [
+    {
+      "function_type": "cpu_data",
+      "region": "local",
+      "url": "http://localhost:8080/ska/datasets/soda",
+      "auth_required": false,
+      "request_params": {
+        "ID": "ivo://src.skao.org/datasets/fits?PTF10tce.fits",
+        "CIRCLE": "351.986728 8.778684 0.01",
+        "RESPONSE_FORMAT": "application/fits"
+      },
+      "local_source_url": "https://gitlab.com/manuparra/test-data-faas/-/raw/main/PTF10tce.fits?inline=false"
+    }
+  ],
+  "args": {
+    "config": "benchmarks/config/endpoints.json",
+    "results_dir": "benchmarks/results/20260224_213653_local_baseline",
+    "tmp_dir": "/tmp/srcnet-bench",
+    "function_types": "cpu_data",
+    "regions": "local",
+    "scenarios": "local",
+    "baseline_duration": 600,
+    "baseline_interval_min": 1.0,
+    "baseline_interval_max": 2.0,
+    "concurrency_levels": "1,10,50",
+    "concurrency_duration": 300,
+    "warm_interval": 5.0,
+    "warm_duration": 300,
+    "idle_minutes": "15,60",
+    "cold_repeats": 20,
+    "skip_idle_wait": false,
+    "local_url": "http://localhost:8080/ska/datasets/soda",
+    "local_source_url": "https://gitlab.com/manuparra/test-data-faas/-/raw/main/PTF10tce.fits?inline=false",
+    "local_id": "ivo://src.skao.org/datasets/fits?PTF10tce.fits",
+    "local_circle": "351.986728 8.778684 0.01",
+    "local_response_format": "application/fits",
+    "local_duration": 300,
+    "local_interval_min": 1.0,
+    "local_interval_max": 3.0
+  },
+  "raw": "benchmarks/results/20260224_213653_local_baseline/20260224_223740/raw.jsonl",
+  "summary": "benchmarks/results/20260224_213653_local_baseline/20260224_223740/summary.csv"
+}

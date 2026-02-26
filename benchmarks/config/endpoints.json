@@ -1,0 +1,16 @@
+{
+  "cpu_data": {
+    "uk": "https://gatekeeper.ral.uksrc.org/soda/ska/datasets/soda",
+    "sweden": "https://gatekeeper.swesrc.chalmers.se/soda/soda/datasets/soda",
+    "spain": "https://gatekeeper.espsrc.iaa.csic.es/soda/ska/datasets/soda",
+    "switzerland": "https://gatekeeper.src.skach.org/soda/ska/datasets/soda",
+    "italy": "https://dmapi.itsrc.oact.inaf.it/soda/sync"
+  },
+  "nohup": {
+    "uk": "https://gatekeeper.ral.uksrc.org/echo/ping",
+    "italy": "https://dmapi.itsrc.oact.inaf.it/ping/",
+    "switzerland": "https://gatekeeper.src.skach.org/ping",
+    "spain": "https://gatekeeper.espsrc.iaa.csic.es/echo/",
+    "sweden": "https://services.swesrc.chalmers.se/http-echo"
+  }
+}

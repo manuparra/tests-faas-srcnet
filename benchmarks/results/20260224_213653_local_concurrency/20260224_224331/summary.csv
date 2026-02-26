@@ -1,0 +1,7 @@
+scenario,phase,function_type,region,concurrency,idle_minutes,requests,success,errors,error_rate,rps,p50_s,p95_s,p99_s,mean_s
+concurrency,,cpu_data,local,1,0,36,36,0,0.0,0.5911,1.57995,2.0997,2.571574,1.648907
+concurrency,,cpu_data,local,5,0,69,69,0,0.0,1.1002,3.67338,8.863667,10.238222,4.399295
+concurrency,,cpu_data,local,10,0,77,77,0,0.0,1.1432,7.324282,16.230002,20.787306,8.221075
+concurrency,,cpu_data,local,20,0,93,93,0,0.0,1.338,12.219081,28.556296,31.044463,14.177388
+concurrency,,cpu_data,local,30,0,91,91,0,0.0,1.2643,19.124472,49.573645,65.77829,22.287428
+concurrency,,cpu_data,local,50,0,95,95,0,0.0,1.1749,36.543465,73.834205,76.79277,38.184615
